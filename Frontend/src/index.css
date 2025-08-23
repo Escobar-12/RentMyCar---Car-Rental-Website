@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+@import "tailwindcss";
+
+:root {
+  font-family: Outfit, sans-serif;
+  color-scheme: light;
+}
+
+body
+{
+  scroll-behavior: smooth;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@theme 
+{
+  --color-primary: #2884f5;
+  --color-primary-soft: #3F51B5;
+  --color-light : #6cadfc;
+  --color-bg : #ebf3fd;
+  --color-borderColor: #E0E0E0; 
+}
+
+
+.CustomB
+{
+  position: relative;
+  transition: transform 0.3s ease-in, background-color 0.3s ease;
+  background-color: var(--color-primary); 
+  color: white;
+
+}
+.CustomB::before
+{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(190, 219, 254); 
+  transition: transform 0.3s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+.CustomB:hover::before
+{
+  transform: translate(-8px,8px);  
+}
+
+
+
+.c-button 
+{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+.c-button__text 
+{
+  position: relative;
+  z-index: 2;      
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+.c-button:hover .c-button__text
+{
+  transition-duration: 260ms;
+  color: white;
+}
+
+.c-button__blobs 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.c-button__blobs div 
+{
+  position: absolute;
+  width: 60px;
+  height: 600px;
+  background: var(--color-primary);
+   border-radius: 60px 60px 0 0;
+  transform: translateY(55px);  
+  transition: transform 0.4s ease;
+}
+
+
+
+.c-button__blobs div:nth-child(1) 
+{
+  top: 10%;
+  left: 0%;
+  transition-delay: 60ms;
+}
+.c-button__blobs div:nth-child(2) 
+{
+  top: 50%;
+  left: 12%;
+  width: 60px;
+  height: 600px;
+  transition-delay: 10ms;
+}
+.c-button__blobs div:nth-child(3) 
+{
+  top: 70%;
+  left: 24%;
+  width: 50px;
+  height: 500px;
+}
+.c-button__blobs div:nth-child(4) 
+{
+  top: 70%;
+  left: 33%;
+  width: 50px;
+  height: 500px;
+  transition-delay: 30ms;
+}
+.c-button__blobs div:nth-child(5) 
+{
+  top: 30%;
+  left: 42%;
+  width: 40px;
+  height: 400px;
+  transition-delay: 60ms;
+}
+.c-button__blobs div:nth-child(6) 
+{
+  top: 0%;
+  left: 50%;
+}
+.c-button__blobs div:nth-child(7) 
+{
+  top: 60%;
+  left: 63%;
+  width: 30px;
+  height: 300px;
+}
+.c-button__blobs div:nth-child(8) 
+{
+  top: 80%;
+  left: 66%;
+}
+.c-button__blobs div:nth-child(9) 
+{
+  top:50%;
+  left: 77%;
+}
+.c-button__blobs div:nth-child(10) 
+{
+  top: 0%;
+  left: 88%;
+  width: 50px;
+  height: 500px;
+}
+
+.c-button:hover .c-button__blobs div 
+{
+  transform: scale(1.5);
+  transform: translateY(-44px)
+}
+
+
+.SearchBotton 
+{
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.SearchBotton::before 
+{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 100%;
+  transform: translate(50%, -50%) scale(0);
+  transition: transform 0.4s ease-out, width 0.4s, height 0.4s;
+  z-index: -1;
+}
+
+.SearchBotton:hover::before 
+{
+  width: 300px;
+  height: 300px;
+  transform: translate(50%, -50%) scale(1);
+}
+
+
+
+@keyframes skeleton-loading
+{
+  0% 
+  {
+    background-color: rgba(208, 215, 219, 0.281);
+  }
+  100%
+  {
+    background-color: rgba(77, 79, 82, 0.336);
+  }
+}
+
+.isLoading
+{
+  position: relative;
+  overflow: hidden;
+}
+
+.isLoading::after
+{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(77, 79, 82, 0.336);
+  animation: skeleton-loading 2s linear infinite alternate;
+}
+
+.skeleton_loading
+{
+  background: linear-gradient(
+    70deg,
+    rgb(214, 211, 211) 25%,
+    rgb(240, 240, 240) 50%,
+    rgb(214, 211, 211) 75%
+  );
+  background-size: 200% 100%;
+  overflow: hidden;
+  animation: card_skeleton_animation 2s infinite linear;
+}
+
+@keyframes card_skeleton_animation 
+{
+    0%
+    {
+      background-position: 200% 0;
+    }
+    100%
+    {
+      background-position: -200% 0;
+    }
+}
+
+.switch {
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #9fccfa;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  inset: 0;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #0974f1;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #0974f1;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6em);
+}
