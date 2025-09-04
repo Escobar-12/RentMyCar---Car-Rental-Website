@@ -32,8 +32,8 @@ A modern **Car Rental Web Application** built with a full-stack architecture tha
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Escobar-12/RentMyCar---Car-Rental-Website
+   cd RentMyCar---Car-Rental-Website
    ```
 ---
 
